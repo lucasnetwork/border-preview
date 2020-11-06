@@ -18,6 +18,10 @@ export default createGlobalStyle`
 		font-family:'Roboto'
 	}
 
+	html,body{
+		height: 100%;
+	}
+
 	.App{
 		display:flex;
 		flex-direction:column;

@@ -11,6 +11,10 @@ export default styled.main`
 	margin: 0 138px;
 	margin-top: 24px;
 	padding: 51px 107px;
+	@media (max-height: 900px) {
+		min-height: 300px;
+		padding: 41px 97px;
+	}
 `;
 
 export const StylesTextContainer = styled.div`

@@ -20,4 +20,16 @@ export default styled.header`
 			color: #beb7a4;
 		}
 	}
+	@media (max-height: 900px) {
+		margin: 0 24px;
+		.text {
+			h1 {
+				font-size: 2.5rem;
+			}
+			h2 {
+				font-size: 1.22rem;
+				color: #beb7a4;
+			}
+		}
+	}
 `;
