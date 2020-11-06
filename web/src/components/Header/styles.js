@@ -7,6 +7,7 @@ export default styled.header`
 	margin-top: 56px;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
 	.text {
 		display: flex;
 		flex-direction: column;

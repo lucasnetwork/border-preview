@@ -1,5 +1,6 @@
-import GlobalStyles from './styles/globalStyles';
+import BorderPreview from './components/BorderPreview';
 import Header from './components/Header';
+import GlobalStyles from './styles/globalStyles';
 
 function App() {
 	return (
@@ -7,7 +8,7 @@ function App() {
 			<GlobalStyles />
 			<div className="App">
 				<Header />
-				<p>Hello world</p>
+				<BorderPreview />
 			</div>
 		</>
 	);

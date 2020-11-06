@@ -24,5 +24,6 @@ export default createGlobalStyle`
 		width:100vw;
 		height:100vh;
 		background-color:#E0E2DB;
+		align-items:center;
 	}
 `;
