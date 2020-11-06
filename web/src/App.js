@@ -1,5 +1,6 @@
 import BorderPreview from './components/BorderPreview';
 import Header from './components/Header';
+import Options from './components/Options';
 import GlobalStyles from './styles/globalStyles';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
 			<div className="App">
 				<Header />
 				<BorderPreview />
+				<Options />
 			</div>
 		</>
 	);
