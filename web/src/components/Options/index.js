@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import InputField from '../InputField';
 import Container, { OptionsContainer } from './styles';
 
-const Options = ({ title }) => (
+const Options = ({ bordervalues }) => (
 	<Container>
-		{title && <h3>{title}</h3>}
+		{bordervalues.title && <h3>{bordervalues.title}</h3>}
 		<OptionsContainer>
-			<InputField title="Left" />
-			<InputField title="Rigth" />
-			<InputField title="Top" />
-			<InputField title="Bottom" />
+			<InputField value={bordervalues.left} title="Left" />
+			<InputField value={bordervalues.rigth} title="Rigth" />
+			<InputField value={bordervalues.top} title="Top" />
+			<InputField value={bordervalues.bottom} title="Bottom" />
 		</OptionsContainer>
 	</Container>
 );
 
 Options.propTypes = {
-	title: PropTypes.string,
+	bordervalues: PropTypes.string,
 };
 
 export default Options;

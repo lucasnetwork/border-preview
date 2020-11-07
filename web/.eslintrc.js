@@ -23,6 +23,7 @@ module.exports = {
 		'react/react-in-jsx-scope': 'off',
 		'react/require-default-props': 'off',
 		'no-unused-vars': 'warn',
+		'react/no-array-index-key': 'off',
 		'import-helpers/order-imports': [
 			'warn',
 			{

@@ -29,7 +29,6 @@ export const ContainerOptions = styled.div`
 		}
 	}
 	@media (max-height: 900px) {
-		/* width:100%; */
 		margin-top: 16px;
 	}
 `;
