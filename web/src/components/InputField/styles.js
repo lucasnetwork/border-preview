@@ -29,8 +29,10 @@ export default styled.div`
 	}
 	@media (max-width: 580px) {
 		justify-content: flex-start;
+		align-items: flex-start;
 		width: 100%;
 		margin: 0;
+		margin-bottom: 16px;
 		p {
 			margin-bottom: 8px;
 		}

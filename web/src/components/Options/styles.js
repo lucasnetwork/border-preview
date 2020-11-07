@@ -4,7 +4,7 @@ export default styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 1196px;
+	max-width: 1182px;
 `;
 
 export const OptionsContainer = styled.div`
