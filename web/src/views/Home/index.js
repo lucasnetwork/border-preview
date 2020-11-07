@@ -15,6 +15,8 @@ const Home = () => {
 			bottom: 0,
 		},
 	]);
+
+	function addOrRemoveBorderValue() {}
 	return (
 		<>
 			<Header />
@@ -22,7 +24,13 @@ const Home = () => {
 			<ContainerOptions>
 				<div>
 					{borderValues.map((borderValue, id) => (
-						<Options bordervalues={borderValue} key={id} />
+						<Options
+							setValue={setBorderValues}
+							bordervalues={borderValue}
+							allBorderValues={borderValues}
+							key={id}
+							id={id}
+						/>
 					))}
 				</div>
 				<ChangeBorderTypeButton className="button" />
