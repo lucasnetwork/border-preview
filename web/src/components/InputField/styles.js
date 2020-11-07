@@ -15,11 +15,27 @@ export default styled.div`
 	}
 	input {
 		height: 28px;
+		width: 100%;
 		max-width: 180px;
+		min-width: 40px;
 		background: #18114f;
 		box-shadow: inset 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
 		border: none;
 		padding-left: 16px;
 		color: #beb7a4;
+	}
+	@media (max-width: 800px) {
+		flex-direction: column;
+	}
+	@media (max-width: 580px) {
+		justify-content: flex-start;
+		width: 100%;
+		margin: 0;
+		p {
+			margin-bottom: 8px;
+		}
+		input {
+			max-width: 100%;
+		}
 	}
 `;

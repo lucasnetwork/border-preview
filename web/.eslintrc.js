@@ -22,6 +22,7 @@ module.exports = {
 		'react/jsx-props-no-spreading': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react/require-default-props': 'off',
+		'no-unused-vars': 'warn',
 		'import-helpers/order-imports': [
 			'warn',
 			{

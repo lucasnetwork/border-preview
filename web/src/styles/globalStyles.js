@@ -29,5 +29,32 @@ export default createGlobalStyle`
 		height:100vh;
 		background-color:#E0E2DB;
 		align-items:center;
+		overflow:auto;
+		.c{
+			display:flex;
+			margin-top:64px;
+			justify-content:center;
+			.button{
+				margin-left:16px;
+			}
+			@media(max-height:900px){
+				width:100%;
+				margin-top:16px;
+				
+			}
+		}
+		@media(max-width:600px){
+			padding:16px;
+			width:100%;
+			.c{
+				width:100%;
+			.button{
+					margin:0;
+					position:fixed;
+					bottom:16px;
+					right:16px;
+				}
+			}
+		}
 	}
 `;
