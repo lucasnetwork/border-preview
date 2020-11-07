@@ -15,6 +15,13 @@ export default styled.main`
 		min-height: 300px;
 		padding: 41px 97px;
 	}
+	@media (max-width: 600px) {
+		min-width: 0;
+		min-height: 800px;
+		padding: 21px 37px;
+		margin-left: 16px;
+		margin-right: 16px;
+	}
 `;
 
 export const StylesTextContainer = styled.div`
