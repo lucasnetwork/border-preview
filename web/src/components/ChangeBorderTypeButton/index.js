@@ -1,7 +1,8 @@
 import Container from './styles';
 
-const ChangeBorderTypeButton = (props) => (
-	<Container {...props}>
+// eslint-disable-next-line react/prop-types
+const ChangeBorderTypeButton = ({ handleChange, ...rest }) => (
+	<Container onClick={handleChange} {...rest}>
 		<span />
 	</Container>
 );

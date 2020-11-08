@@ -4,11 +4,14 @@ import styled from 'styled-components';
 export const ContainerOptions = styled.div`
 	display: flex;
 	flex-direction: row;
-	margin-top: 64px;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-between;
 	.button {
 		margin-left: 16px;
+	}
+	.option {
+		margin: 0;
+		margin-top: 64px;
 	}
 	> div {
 		display: flex;
@@ -18,6 +21,9 @@ export const ContainerOptions = styled.div`
 	@media (max-width: 600px) {
 		padding: 16px;
 		width: 100%;
+		.option {
+			margin-top: 16px;
+		}
 		.button {
 			margin: 0;
 			position: fixed;

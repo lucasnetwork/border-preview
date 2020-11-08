@@ -15,7 +15,6 @@ export const OptionsContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 0 8px;
-	margin-bottom: 16px;
 	@media (max-width: 600px) {
 		padding: 20px 16px;
 		flex-direction: column;
