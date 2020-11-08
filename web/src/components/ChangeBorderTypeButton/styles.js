@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.button`
 	width: 88px;
@@ -19,9 +19,18 @@ export default styled.button`
 	span {
 		display: block;
 		width: 66px;
-		height: 38px;
+		height: 66px;
 		border: 6px solid #18114f;
 		box-sizing: border-box;
 		border-radius: 50%;
+		transition: height 0.2s linear;
 	}
+	${({ elipt }) =>
+		elipt &&
+		css`
+			span {
+				width: 66px;
+				height: 38px;
+			}
+		`}
 `;

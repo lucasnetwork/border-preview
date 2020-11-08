@@ -72,6 +72,7 @@ const Home = () => {
 							bordervalues={borderValues}
 						/>
 						<ChangeBorderTypeButton
+							elipt={elipt}
 							handleChange={() => setElipt(!elipt)}
 							className="button"
 						/>
