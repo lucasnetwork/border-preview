@@ -25,6 +25,19 @@ const Home = () => {
 	const [elipt, setElipt] = useState(false);
 
 	useEffect(() => {
+		BorderPreviewRef.current.style.borderRadius = `
+		${borderValues.top || 0}px 
+		${borderValues.rigth || 0}px 
+		${borderValues.bottom || 0}px 
+		${borderValues.left || 0}px / 
+		
+		${borderValuesTwo.top || borderValues.top || 0}px 
+		${borderValuesTwo.rigth || borderValues.rigth || 0}px 
+		${borderValuesTwo.bottom || borderValues.bottom || 0}px 
+		${borderValuesTwo.left || borderValues.left || 0}px`;
+	}, [borderValues, borderValuesTwo]);
+
+	useEffect(() => {
 		if (elipt) {
 			BorderPreviewRef.current.style.transition = 'height 0.2s linear';
 			BorderPreviewRef.current.style.height = '77%';

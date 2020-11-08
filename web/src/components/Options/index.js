@@ -18,9 +18,21 @@ const Options = forwardRef(({ bordervalues, setValue }, ref) => {
 					value={bordervalues.left}
 					title="Left"
 				/>
-				<InputField value={bordervalues.rigth} title="Rigth" />
-				<InputField value={bordervalues.top} title="Top" />
-				<InputField value={bordervalues.bottom} title="Bottom" />
+				<InputField
+					value={bordervalues.rigth}
+					handleChange={(e) => handleBorderValue('rigth', e.target.value)}
+					title="Rigth"
+				/>
+				<InputField
+					value={bordervalues.top}
+					handleChange={(e) => handleBorderValue('top', e.target.value)}
+					title="Top"
+				/>
+				<InputField
+					value={bordervalues.bottom}
+					handleChange={(e) => handleBorderValue('bottom', e.target.value)}
+					title="Bottom"
+				/>
 			</OptionsContainer>
 		</Container>
 	);
