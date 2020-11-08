@@ -19,7 +19,11 @@ export default createGlobalStyle`
 	}
 
 	html,body{
-		height: 100%;
+		display:flex;
+		align-items:center;
+		justify-content:space-around;
+		height: 100vh;
+		background-color:#E0E2DB;
 	}
 
 	.App{
@@ -27,8 +31,8 @@ export default createGlobalStyle`
 		flex-direction:column;
 		width:100vw;
 		height:100vh;
-		background-color:#E0E2DB;
+		max-height:1024px;
 		align-items:center;
-		overflow:auto;
+		overflow: hidden;
 	}
 `;

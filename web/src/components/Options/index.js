@@ -1,18 +1,16 @@
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
 import InputField from '../InputField';
 import Container, { OptionsContainer } from './styles';
 
-const Options = ({ allBorderValues, bordervalues, setValue, id }) => {
+const Options = forwardRef(({ bordervalues, setValue }, ref) => {
 	function handleBorderValue(title, value) {
-		const newBorderValue = [{ ...bordervalues, [title]: value }];
-		const newBorderValues = allBorderValues.map((borderValue, index) =>
-			index === id ? { ...newBorderValue } : borderValue
-		);
-		setValue(newBorderValues);
+		const newBorderValue = { ...bordervalues, [title]: value };
+		setValue(newBorderValue);
 	}
 	return (
-		<Container>
+		<Container ref={ref}>
 			{bordervalues.title && <h3>{bordervalues.title}</h3>}
 			<OptionsContainer>
 				<InputField
@@ -26,14 +24,11 @@ const Options = ({ allBorderValues, bordervalues, setValue, id }) => {
 			</OptionsContainer>
 		</Container>
 	);
-};
+});
 
 Options.propTypes = {
 	bordervalues: PropTypes.string,
-	// eslint-disable-next-line react/forbid-prop-types
-	allBorderValues: PropTypes.array,
 	setValue: PropTypes.func,
-	id: PropTypes.number,
 };
 
 export default Options;

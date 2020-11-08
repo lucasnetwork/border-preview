@@ -6,6 +6,7 @@ export const ContainerOptions = styled.div`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	position: relative;
 	.button {
 		margin-left: 16px;
 	}
@@ -16,7 +17,11 @@ export const ContainerOptions = styled.div`
 	> div {
 		display: flex;
 		justify-content: center;
+		overflow: visible;
 		flex-direction: column;
+		.optionsContainerWithButton {
+			display: flex;
+		}
 	}
 	@media (max-width: 600px) {
 		padding: 16px;

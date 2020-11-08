@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import BorderPreview from '../../components/BorderPreview';
 import ChangeBorderTypeButton from '../../components/ChangeBorderTypeButton';
@@ -7,52 +7,70 @@ import Options from '../../components/Options';
 import { ContainerOptions } from './styles';
 
 const Home = () => {
-	const [borderValues, setBorderValues] = useState([
-		{
-			left: '',
-			rigth: '',
-			top: '',
-			bottom: '',
-		},
-	]);
+	const BorderPreviewRef = useRef();
+	const optionsOne = useRef();
+	const optionsTwo = useRef();
+	const [borderValues, setBorderValues] = useState({
+		left: '',
+		rigth: '',
+		top: '',
+		bottom: '',
+	});
+	const [borderValuesTwo, setBorderValuesTwo] = useState({
+		left: '',
+		rigth: '',
+		top: '',
+		bottom: '',
+	});
+	const [elipt, setElipt] = useState(false);
 
-	function addOrRemoveBorderValue() {
-		if (borderValues.length < 2) {
-			setBorderValues([
-				{ ...borderValues, title: 'Primeiro Raio' },
-				{ left: '', rigth: '', top: '', bottom: '', title: 'Segundo Raio' },
-			]);
+	useEffect(() => {
+		if (elipt) {
+			BorderPreviewRef.current.style.transition = 'height 0.2s linear';
+			BorderPreviewRef.current.style.height = '77%';
+			optionsOne.current.style.transition = 'transform 0.2s linear';
+			optionsOne.current.style.transform = 'translateY(-100%)';
+			optionsTwo.current.style.transition =
+				'transform 0.2s linear, opacity 0.4s linear';
+			optionsTwo.current.style.opacity = '1';
+			optionsTwo.current.style.transform = 'translateY(0)';
 		} else {
-			const value = {
-				left: borderValues[0].left,
-				rigth: borderValues[0].rigth,
-				top: borderValues[0].top,
-				bottom: borderValues[0].bottom,
-			};
-			setBorderValues([value]);
+			BorderPreviewRef.current.style.height = '100%';
+			optionsOne.current.style.transform = 'translateY(0)';
+			optionsTwo.current.style.transform = 'translateY(100%)';
+			optionsTwo.current.style.opacity = '0';
 		}
-	}
+	}, [elipt]);
+	useEffect(() => {
+		optionsTwo.current.style.position = 'absolute';
+		optionsTwo.current.style.opacity = '0';
+		optionsTwo.current.style.transform = 'translateY(100%)';
+	}, []);
 	return (
 		<>
 			<Header />
-			<BorderPreview />
+			<BorderPreview ref={BorderPreviewRef} />
 			<ContainerOptions>
 				<div>
-					{borderValues.map((borderValue, id) => (
+					<div className="optionsContainerWithButton" ref={optionsOne}>
 						<Options
 							className="option"
 							setValue={setBorderValues}
-							bordervalues={borderValue}
-							allBorderValues={borderValues}
-							key={id}
-							id={id}
+							bordervalues={borderValues}
 						/>
-					))}
+						<ChangeBorderTypeButton
+							handleChange={() => setElipt(!elipt)}
+							className="button"
+						/>
+					</div>
+
+					<Options
+						ref={optionsTwo}
+						className="option"
+						setValue={setBorderValuesTwo}
+						bordervalues={borderValuesTwo}
+					/>
 				</div>
-				<ChangeBorderTypeButton
-					handleChange={addOrRemoveBorderValue}
-					className="button"
-				/>
 			</ContainerOptions>
 		</>
 	);

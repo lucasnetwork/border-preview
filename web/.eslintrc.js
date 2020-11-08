@@ -24,6 +24,8 @@ module.exports = {
 		'react/require-default-props': 'off',
 		'no-unused-vars': 'warn',
 		'react/no-array-index-key': 'off',
+		'react/forbid-prop-types': 'off',
+		'no-param-reassign': 'off',
 		'import-helpers/order-imports': [
 			'warn',
 			{

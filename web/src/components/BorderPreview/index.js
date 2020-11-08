@@ -1,9 +1,13 @@
+import { forwardRef } from 'react';
+
 import Container, { StylesTextContainer } from './styles';
 
-const BorderPreview = () => (
+const BorderPreview = forwardRef((props, ref) => (
 	<Container>
-		<StylesTextContainer />
+		<div ref={ref}>
+			<StylesTextContainer />
+		</div>
 	</Container>
-);
+));
 
 export default BorderPreview;

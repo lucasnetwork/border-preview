@@ -6,21 +6,31 @@ export default styled.main`
 	min-width: 379px;
 	height: 100%;
 	min-height: 434px;
-	max-height: 642px;
-	background-color: #3d348b;
+
 	margin: 0 138px;
+	margin-bottom: 24px;
 	margin-top: 24px;
-	padding: 51px 107px;
+	transition: height 0.5s linear;
+	> div {
+		padding: 51px 107px;
+		width: 100%;
+		height: 100%;
+		background-color: #3d348b;
+	}
 	@media (max-height: 900px) {
 		min-height: 300px;
-		padding: 41px 97px;
+		> div {
+			padding: 41px 97px;
+		}
 	}
 	@media (max-width: 600px) {
 		min-width: 0;
 		min-height: 800px;
-		padding: 21px 37px;
 		margin-left: 16px;
 		margin-right: 16px;
+		> div {
+			padding: 21px 37px;
+		}
 	}
 `;
 
