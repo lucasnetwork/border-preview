@@ -9,6 +9,8 @@ export const ContainerOptions = styled.div`
 	position: relative;
 	.button {
 		margin-left: 16px;
+		z-index: 10;
+		align-self: center;
 	}
 	.option {
 		margin: 0;

@@ -34,5 +34,8 @@ export default createGlobalStyle`
 		max-height:1024px;
 		align-items:center;
 		overflow: hidden;
+		@media(max-width:600px){
+			overflow:auto
+		}
 	}
 `;

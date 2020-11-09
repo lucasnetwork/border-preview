@@ -25,7 +25,7 @@ export default styled.main`
 	}
 	@media (max-width: 600px) {
 		min-width: 0;
-		min-height: 800px;
+		min-height: 400px;
 		margin-left: 16px;
 		margin-right: 16px;
 		> div {
@@ -35,8 +35,15 @@ export default styled.main`
 `;
 
 export const StylesTextContainer = styled.div`
+	overflow-y: auto;
 	display: flex;
 	background-color: #18114f;
 	height: 100%;
 	width: 100%;
+	padding: 32px;
+	flex-direction: column;
+	p {
+		font-size: 2rem;
+		color: #beb7a4;
+	}
 `;

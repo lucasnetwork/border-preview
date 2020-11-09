@@ -27,7 +27,7 @@ export default styled.div`
 	@media (max-width: 800px) {
 		flex-direction: column;
 	}
-	@media (max-width: 580px) {
+	@media (max-width: 600px) {
 		justify-content: flex-start;
 		align-items: flex-start;
 		width: 100%;

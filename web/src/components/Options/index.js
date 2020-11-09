@@ -4,14 +4,14 @@ import { forwardRef } from 'react';
 import InputField from '../InputField';
 import Container, { OptionsContainer } from './styles';
 
-const Options = forwardRef(({ bordervalues, setValue }, ref) => {
+const Options = forwardRef(({ bordervalues, setValue, type }, ref) => {
 	function handleBorderValue(title, value) {
 		const newBorderValue = { ...bordervalues, [title]: value };
 		setValue(newBorderValue);
 	}
 	return (
 		<Container ref={ref}>
-			{bordervalues.title && <h3>{bordervalues.title}</h3>}
+			{type && <h3>{bordervalues.title}</h3>}
 			<OptionsContainer>
 				<InputField
 					handleChange={(e) => handleBorderValue('left', e.target.value)}
@@ -20,7 +20,7 @@ const Options = forwardRef(({ bordervalues, setValue }, ref) => {
 				/>
 				<InputField
 					value={bordervalues.rigth}
-					handleChange={(e) => handleBorderValue('rigth', e.target.value)}
+					handleChange={(e) => handleBorderValue('right', e.target.value)}
 					title="Rigth"
 				/>
 				<InputField
@@ -41,6 +41,7 @@ const Options = forwardRef(({ bordervalues, setValue }, ref) => {
 Options.propTypes = {
 	bordervalues: PropTypes.string,
 	setValue: PropTypes.func,
+	type: PropTypes.bool,
 };
 
 export default Options;
