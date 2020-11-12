@@ -1,5 +1,4 @@
 import PropType from 'prop-types';
-import { useEffect } from 'react';
 
 import Container from './styles';
 
